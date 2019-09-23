@@ -15,6 +15,7 @@ export class ViewOneIntern extends Component {
         let params = new URLSearchParams(search);
         let token = params.get('id');
         this.props.getOneIntern(token);
+    
         // const query = new URLSearchParams(this.props.location.search);
         // const token = query.get('id')
         //    this.props.getOneIntern(token);
@@ -22,39 +23,33 @@ export class ViewOneIntern extends Component {
         
     }
 
-    render() {
+    render(){
         const {items} = this.props.item
         return (
-            <div>
-                <ListGroup>
-                <TransitionGroup className="shopping-list">
-                        {items.map(({_id , name}) => (
-                            <CSSTransition key={_id} timeout ={500} classNames = "fade">
-                                <ListGroupItem tag="a" href={"/view-one-intern?id="+ _id} > 
-                                    {/* <Button
-                                        className="remove-btn"
-                                        color= "danger"
-                                        size= "sm"
-                                        onClick= { this.onDeleteClick.bind(this,  _id)
-                                            // () => {
-                                            //     this.setState(state =>({
-                                            //         items : state.items.filter(items=> items.id !== id)
-                                            //     }))
-                                            // }
-                                        }>
-                                            &times;
-                                        </Button> */}
-                                   
-                                   {name}
-                                </ListGroupItem>
-                            </CSSTransition>
-                        ))}
-                    </TransitionGroup>
-                </ListGroup>
-            </div>
-        )
+          <div>
+      
+            <h1 className="text-center">View Intern Details</h1>
+            <p></p>
+                      <ListGroup>
+                      <TransitionGroup className="shopping-list">
+                              {items.map(({_id , name, gender, dob,
+                              contact, address,institution,year,dept }) => (
+                                  <CSSTransition key={_id} timeout ={500} classNames = "fade">
+                                   <ListGroup>
+                                    <ListGroupItem>{name}</ListGroupItem>
+                                    <ListGroupItem>{gender}</ListGroupItem>
+                                    <ListGroupItem>{dob}</ListGroupItem>
+                                    <ListGroupItem>{contact}</ListGroupItem>
+                                    <ListGroupItem>{address}</ListGroupItem>
+                                  </ListGroup>
+                                  </CSSTransition>
+                              ))}
+                          </TransitionGroup>
+                      </ListGroup>
+                  </div>
+        );
+      }
     }
-}
 
 ViewOneIntern.propTypes = {
     getOneIntern : PropTypes.func.isRequired,

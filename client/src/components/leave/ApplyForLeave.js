@@ -80,7 +80,7 @@ export class ApplyForLeave extends Component {
                  <Alert color="secondary">
                     This is a secondary alert — check it out!
                  </Alert>
-                     <h1>Add New Staff on Leave</h1>
+                 <h1 className="text-center">All Recorded Nsp</h1>
                 <Form onSubmit={this.onSubmit}>
                     <FormGroup className="row col-xs-8">
                         <Label for="name">Name</Label>

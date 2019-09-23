@@ -7,6 +7,10 @@ import { Button,
 import {connect} from 'react-redux'
 import{addIntern} from '../../actions/internActions'
 import PropTypes from 'prop-types'
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
+import firebaseConfig from '../../firebaseConfig'
 
 
 
@@ -15,11 +19,14 @@ export class InternForm extends Component {
 
     constructor(props) {
         super(props);
+        firebase.initializeApp(firebaseConfig);
+
+       
     
         // this.toggle = this.toggle.bind(this);
         this.state = {
         //   dropdownOpen: false,
-            dob: new Date().toISOString(),
+            dob: new Date(),
             gender : "female"
         };
       }
@@ -43,11 +50,12 @@ export class InternForm extends Component {
 
     onSubmit = e =>{
         e.preventDefault();
+        var storage = firebase.storage();
 
         const newItem = {
             name : this.state.name,
             gender: this.state.gender,
-            dob: this.state.dob,
+            dob: this.state.dob.toISOString(),
             contact : this.state.contact,
             address : this.state.address,
             institution : this.state.institution,
@@ -89,7 +97,7 @@ export class InternForm extends Component {
                             <Input type="text" name="contact" id="contact" onChange={this.onChange} placeholder="with a placeholder" />
                         <p>
                         <Label for="dob">Date of Birth</Label>
-                                <DatePicker  id="dob" selected={this.state.startDate} onChange={this.handleChange}/>
+                                <DatePicker  id="dob" selected={this.state.dob} onChange={this.handleChange}/>
                         </p>
                         <Label for="institution">Institution Attended</Label>
                             <Input type="text" name="institution" id="institution"  onChange={this.onChange} placeholder="with a placeholder" />

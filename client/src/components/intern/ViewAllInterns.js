@@ -27,6 +27,7 @@ class ViewAllInterns extends Component {
         const {items} = this.props.item
         return (
             <div>
+                       <h1 className="text-center">All Recorded Interns</h1>
                 <ListGroup>
                 <TransitionGroup className="shopping-list">
                         {items.map(({_id , name}) => (

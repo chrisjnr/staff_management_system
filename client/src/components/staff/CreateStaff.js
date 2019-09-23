@@ -7,6 +7,9 @@ import { Button,
 import {connect} from 'react-redux'
 import {addStaff} from '../../actions/internActions'
 import PropTypes from 'prop-types'
+import toast from 'toasted-notes';
+import {  ListGroup, ListGroupItem} from 'reactstrap';
+import 'toasted-notes/src/styles.css';
 
 
 
@@ -19,7 +22,7 @@ export class CreateStaff extends Component {
         // this.toggle = this.toggle.bind(this);
         this.state = {
         //   dropdownOpen: false,
-            dob: new Date().toISOString(),
+            // dob: "",
             gender : "Single"
         };
       }
@@ -65,7 +68,9 @@ export class CreateStaff extends Component {
         }
 
         // Add Item via addItemAction
-        this.props.addStaff(newItem)
+        toast.notify(
+        <span style={{color : 'green'}}>Added A New Staff</span>)
+        // this.props.addStaff(newItem)
 
 
 
@@ -85,7 +90,7 @@ export class CreateStaff extends Component {
                  <Alert color="secondary">
                     This is a secondary alert — check it out!
                  </Alert>
-                     <h1>Add a New National Service Personnel</h1>
+                     <h1>Add a New Staff </h1>
                 <Form onSubmit={this.onSubmit}>
                     <FormGroup className="row col-xs-8">
                         <Label for="name">Name</Label>
@@ -94,7 +99,7 @@ export class CreateStaff extends Component {
                             <Input type="text" name="contact" id="contact" onChange={this.onChange} placeholder="with a placeholder" />
                         <p>
                         <Label for="dob">Date of Birth</Label>
-                                <DatePicker  id="dob" selected={this.state.startDate} onChange={this.handleChange}/>
+                                <DatePicker  id="dob" selected={this.state.dob} onChange={this.handleChange}/>
                         </p>
 
                         <p>

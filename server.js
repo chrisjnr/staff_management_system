@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const interns = require('./routes/api/AllUsers')
 const leave = require('./routes/api/Leave')
 const staff = require('./routes/api/Staff')
+const nsp = require('./routes/api/Nsp')
 
 
 
@@ -20,6 +21,7 @@ const db = require('./config/keys').mongoURI
 app.use('/api/interns', interns)
 app.use('/api/leave', leave)
 app.use('/api/staff', staff)
+app.use('/api/nsp', nsp)
 
 
 

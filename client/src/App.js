@@ -19,6 +19,8 @@ import ApplyForLeave  from './components/leave/ApplyForLeave';
 import ViewAllStaff  from './components/staff/ViewAllStaff';
 import  CreateStaff  from './components/staff/CreateStaff';
 import ViewAllLeave from './components/leave/ViewAllLeave';
+import ViewAll from './components/nsp/ViewAll';
+import ViewOneNsp from './components/nsp/ViewOneNsp';
 
 
 export default class App extends Component {
@@ -99,6 +101,35 @@ export default class App extends Component {
             </React.Fragment>
           )
         }/>
+
+        <Route path = '/view-one-nsp' render = {
+                  props =>(
+                    <React.Fragment>
+                        <Header/>
+                    <div className="content-wrapper" >
+                      <ViewOneNsp/>
+                      <Menu/>
+                      
+                      </div>
+                    </React.Fragment>
+                  )
+                }/>
+
+        <Route path = '/view-nsp' render = {
+                  props =>(
+                    <React.Fragment>
+                        <Header/>
+                    <div className="content-wrapper" >
+                      <Container>
+                         <ViewAll/>
+                      </Container>
+                      
+                      <Menu/>
+                      
+                      </div>
+                    </React.Fragment>
+                  )
+                }/>
         <Route path = '/form' component = {Form}/>
         <Route path = '/signin' component = {SignIn}/>
         <Route path = '/apply-intern' render = {

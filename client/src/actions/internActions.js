@@ -3,6 +3,7 @@ import {GET_ITEMS_INTERN, GET_ONE_INTERN, ADD_ITEM_INTERN, DELETE_ITEM_INTERN, I
     GET_ONE_STAFF ,
     ADD_ITEM_STAFF,
     DELETE_ITEM_STAFF,
+    ERROR_ITEMS_LOADING,
     ITEMS_LOADING_STAFF,} from './types'
 import axios from 'axios'
 
@@ -93,6 +94,10 @@ export  const getOneStaff= (id) => dispatch=>{
             dispatch({
                 type:GET_ONE_STAFF,
                 payload: res.data
+            }))
+            .catch(err=>  dispatch({
+                type:ERROR_ITEMS_LOADING,
+                // payload: res.data
             }))
 }
 
