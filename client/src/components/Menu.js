@@ -79,7 +79,9 @@ export default class Menu extends Component {
           </a>
           <ul className="treeview-menu">
             <li><a href="/apply-intern"><i className="fa fa-circle-o" /> Internship Applications</a></li>
-            <li><a href="/apply-job"><i className="fa fa-circle-o" /> Job Applications</a></li>apply-intern
+            <li><a href="/apply-job"><i className="fa fa-circle-o" /> Job Applications</a></li>
+            <li><a href="/add-nsp"><i className="fa fa-circle-o" /> Nsp Applications</a></li>
+
           </ul>
         </li>
     

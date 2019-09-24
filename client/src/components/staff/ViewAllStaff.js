@@ -49,7 +49,7 @@ class ViewAllStaff extends Component {
                             
                                 {items.map(({_id , name}) => (
                                     <CSSTransition key={_id} timeout ={500} classNames = "fade">
-                                        <ListGroupItem tag="a" href={"/view-one-intern?id="+ _id} > 
+                                        <ListGroupItem tag="a" href={"/view-one-staff?id="+ _id} > 
                                             {/* <Button
                                                 className="remove-btn"
                                                 color= "danger"

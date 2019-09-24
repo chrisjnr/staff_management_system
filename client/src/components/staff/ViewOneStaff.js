@@ -6,7 +6,7 @@ import {Media, Container} from 'reactstrap'
 import {  ListGroup, ListGroupItem, Button} from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 
-export class ViewOneStaff extends Component {
+class ViewOneStaff extends Component {
 
 
 

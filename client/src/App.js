@@ -21,6 +21,8 @@ import  CreateStaff  from './components/staff/CreateStaff';
 import ViewAllLeave from './components/leave/ViewAllLeave';
 import ViewAll from './components/nsp/ViewAll';
 import ViewOneNsp from './components/nsp/ViewOneNsp';
+import ViewOneStaff from './components/staff/ViewOneStaff';
+import NspApply from './components/nsp/NspApply';
 
 
 export default class App extends Component {
@@ -59,13 +61,13 @@ export default class App extends Component {
             </React.Fragment>
           )
         }/>
-             <Route path = '/add-staff' render = {
+             <Route path = '/view-one-staff' render = {
           props =>(
             <React.Fragment>
                 <Header/>
              <div className="content-wrapper" >
                <Container>
-                  <CreateStaff/>
+                  <ViewOneStaff/>
                </Container>
               
               <Menu/>
@@ -109,6 +111,23 @@ export default class App extends Component {
                     <div className="content-wrapper" >
                       <ViewOneNsp/>
                       <Menu/>
+                      
+                      </div>
+                    </React.Fragment>
+                  )
+                }/>
+
+
+        <Route path = '/add-nsp' render = {
+                  props =>(
+                    <React.Fragment>
+                        {/* <Header/> */}
+                    <div className="content-wrapper" >
+                      <Container>
+                        <NspApply/>
+                      </Container>
+                      
+                      {/* <Menu/> */}
                       
                       </div>
                     </React.Fragment>

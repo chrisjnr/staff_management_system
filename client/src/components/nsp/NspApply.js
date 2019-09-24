@@ -35,8 +35,8 @@ export class NspApply extends Component {
       <div class="form-group">
                   <label>Select Type Of Application</label>
                   <select class="form-control">
-                    <option>Internship</option>
-                    <option>Full Time Employment</option>
+                    <option>NSP</option>
+                    {/* <option>Full Time Employment</option> */}
                     {/* <option>option 3</option>
                     <option>option 4</option>
                     <option>option 5</option> */}
