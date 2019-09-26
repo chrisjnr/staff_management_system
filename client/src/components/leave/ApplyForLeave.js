@@ -61,6 +61,7 @@ export class ApplyForLeave extends Component {
 
         // Add Item via addItemAction
         this.props.addLeave(newItem)
+        window.location.href = '/view-leave'
 
 
 

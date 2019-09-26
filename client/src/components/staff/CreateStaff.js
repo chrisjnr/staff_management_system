@@ -70,7 +70,8 @@ export class CreateStaff extends Component {
         // Add Item via addItemAction
         toast.notify(
         <span style={{color : 'green'}}>Added A New Staff</span>)
-        // this.props.addStaff(newItem)
+        // this.props.addNsp(newItem)
+        window.location.href = '/view-staff'
 
 
 

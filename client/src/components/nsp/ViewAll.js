@@ -12,9 +12,6 @@ export class ViewAll extends Component {
     this.props.getNsp()
   }
 
-  onClick = (id)=>{
-    return <Redirect to="/path?id=42"/>
-  }
 
   render() {
     const {items} = this.props.nsp
@@ -36,7 +33,7 @@ export class ViewAll extends Component {
 
             {items.map(({_id , name, contact, dept}) => (
                             // <Link to="/path?id=42">
-                              <tr onClick={this.onClick.bind(this, _id)}>
+                              <tr>
                                 
                                  <td>{name}</td>
                                  <td>{contact}</td>

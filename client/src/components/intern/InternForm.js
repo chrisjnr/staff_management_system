@@ -11,6 +11,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import firebaseConfig from '../../firebaseConfig'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 
 
@@ -19,7 +20,7 @@ export class InternForm extends Component {
 
     constructor(props) {
         super(props);
-        firebase.initializeApp(firebaseConfig);
+        // firebase.initializeApp(firebaseConfig);
 
        
     
@@ -50,7 +51,7 @@ export class InternForm extends Component {
 
     onSubmit = e =>{
         e.preventDefault();
-        var storage = firebase.storage();
+        // var storage = firebase.storage();
 
         const newItem = {
             name : this.state.name,
@@ -69,8 +70,10 @@ export class InternForm extends Component {
 
         // Add Item via addItemAction
         this.props.addIntern(newItem)
+        // this.props.router.history.push('/view-interns')
+        // return <Redirect to="/"/>
 
-
+        window.location.href = '/view-interns'
 
         // close modal
         // this.toggle()
@@ -89,6 +92,7 @@ export class InternForm extends Component {
                     This is a secondary alert — check it out!
                  </Alert>
                      <h1>Add a New Intern</h1>
+
                 <Form onSubmit={this.onSubmit}>
                     <FormGroup className="row col-xs-8">
                         <Label for="name">Name</Label>
@@ -131,6 +135,8 @@ export class InternForm extends Component {
                     </FormGroup>
                     
                 </Form>
+                
+                
                 </Container>
             </div>
         )
