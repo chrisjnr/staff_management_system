@@ -19,7 +19,7 @@ export class NspApply extends Component {
     this.state = {
     //   dropdownOpen: false,
         // dob: "",
-        gender : "Single"
+        // gender : "Single"
     };
   }
 
@@ -52,7 +52,7 @@ onSubmit = e =>{
     const newItem = {
       name : this.state.name,
       gender: this.state.gender,
-      dob: this.state.dob.toISOString(),
+      dob: this.state.dob,
       contact : this.state.contact,
       address : this.state.address,
       institution : this.state.institution,
@@ -115,7 +115,7 @@ onSubmit = e =>{
                         <Label for="skills">Additional Skills</Label>
                             <Input type="textarea" onChange={this.onChange} name="skills" id="skills" />
                         <p>
-                            <Button style={{backgroundColor : 'green', color: '#fff', textAlign: 'center'}} block className="col-xs-4">Add New Intern</Button>
+                            <Button style={{backgroundColor : 'green', color: '#fff', textAlign: 'center'}} block className="col-xs-4">Add New NSP</Button>
 
                         </p>
                     </FormGroup>

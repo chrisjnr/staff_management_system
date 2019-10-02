@@ -98,7 +98,7 @@ export class ApplyForLeave extends Component {
                         </p>
                         
                         <p>
-                            <Button style={{backgroundColor : 'green', color: '#fff', textAlign: 'center'}} block className="col-xs-4">Add New Intern</Button>
+                            <Button style={{backgroundColor : 'green', color: '#fff', textAlign: 'center'}} block className="col-xs-4">Add New Leave Entry</Button>
 
                         </p>
                     </FormGroup>

@@ -27,8 +27,8 @@ export class InternForm extends Component {
         // this.toggle = this.toggle.bind(this);
         this.state = {
         //   dropdownOpen: false,
-            dob: new Date(),
-            gender : "female"
+            // dob: new Date(),
+            // gender : "female"
         };
       }
 
@@ -56,7 +56,7 @@ export class InternForm extends Component {
         const newItem = {
             name : this.state.name,
             gender: this.state.gender,
-            dob: this.state.dob.toISOString(),
+            dob: this.state.dob,
             contact : this.state.contact,
             address : this.state.address,
             institution : this.state.institution,
